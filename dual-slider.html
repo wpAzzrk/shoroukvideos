@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<head>
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+
+    <style>
+     .twoSlider  .slider-container {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+      }
+     .twoSlider .swiper-container {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .slider1 .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        color: #fff;
+        height: 100%;
+      }
+      .slider2 .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        color: #fff;
+        height: 100%;
+      }
+      /* Make the first slider cover the entire background */
+      .slider1 {
+        z-index: 1;
+      }
+      .slider2 {
+        z-index: 2;
+      }
+      #themes.swiper {
+        width: 100%;
+        height: 100%;
+        scroll-behavior: smooth;
+        scroll-padding-top: 110px;
+      }
+      #themes .swiper-slide {
+        font-size: 18px;
+        background: #fff;
+        width: 100vw;
+        height: 100vh !important;
+        -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        outline: none;
+        border: 0;
+        min-height: 100vh;
+      }
+      #themes .container-theme {
+        width: 100vw;
+        height: 100vh;
+        background-size: 100% 100%;
+        background-color: #1e142ebf;
+        background-blend-mode: overlay;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+      }
+      .themes-b__bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+      }
+      #themes .swiper-slide .themes-b__bg img {
+        animation: 1s imgAnimateDefault ease-out forwards;
+        transform-origin: center center;
+      }
+      @keyframes imgAnimateDefault {
+        0% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(1.3);
+        }
+      }
+      #themes .swiper-slide-active .themes-b__bg img {
+        animation: 1s imgAnimate ease-out forwards;
+      }
+      @keyframes imgAnimate {
+        0% {
+          transform: scale(1.3);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      .themes-b__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+        max-width: 500px;
+        height: 54%;
+        padding-left: 23%;
+        z-index: 3;
+      }
+      .themes-b__about {
+        padding-top: 16.5rem;
+         display: flex;
+    flex-direction: column;
+      }
+      .themes-b__about a {
+    outline: none;
+    border: 0;
+    text-decoration: none;
+    transition: var(--transition);
+    color: inherit;
+    text-align: start;
+}
+      #themes .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .themes-b__url {
+    display: inline-flex;
+   
+    align-items: center;
+    border-radius: 35px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: rgba(255, 255, 255, 0.8) !important;
+    letter-spacing: -0.48px;
+    font-weight: 400 !important;
+    padding: 0 22px 2px;
+    height: 40px;
+    font-size: 18.1px !important;
+    text-decoration: underline !important;
+}
+      .themes-b__url .icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+      }
+      .themes-b__url:hover {
+        background: rgba(255, 255, 255, 0.2);
+        color: rgb(255, 255, 255);
+      }
+      #themes .title_small {
+        margin: 0 0 0.875rem;
+        letter-spacing: -1.32px;
+        line-height: 36px;
+        font-size: 24px;
+        font-weight: 700;
+        color: #fff;
+      }
+      #themes .themes-b__content .caption-b {
+    font-size: 24px;
+    margin: 0 0 2rem;
+    color: #fff;
+    opacity: 1;
+    font-weight: 200;
+    line-height: 36px;
+    text-align: start;
+}
+      #themes .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border: 0;
+        transition: var(--transition);
+        box-sizing: border-box;
+        outline: none;
+        padding: 0 44px;
+        appearance: none;
+        font-family: var(--font-family);
+        height: 56px;
+        border-radius: 60px;
+        box-shadow: 0px -4px 4px 0px #ff217b inset,
+          -4px 0px 4px 0px #ff217b inset, 4px 0px 4px 0px #ff64a3 inset,
+          0px 4px 4px 0px #e0e0e040 inset;
+        background-color: #ff438f;
+        color: #fff;
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 600;
+        width: fit-content;
+      }
+      .themes-b__grid {
+        position: relative;
+        z-index: 3;
+        display: flex;
+        justify-content: space-between;
+        min-height: 568px;
+      }
+      #themes .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      #themes .themes-b__pic {
+        display: none;
+      }
+      .slider2 .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: #fff;
+    height: 100%;
+}
+      .themes-b__pic {
+    width: calc(100% - 440px);
+    display: block;
+    padding-right: 23%;
+}
+      .themes-b__pic img {
+        width: 100%;
+      }
+      .slider2.main-picture-b {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%) rotate(180deg);
+        z-index: 9;
+        width: 100%;
+        pointer-events: none;
+        transition: 0.75s ease-out;
+        transition-delay: 0s;
+        overflow: hidden;
+        height: 68%;
+      }
+      .main-picture-b_show {
+        opacity: 1;
+        transition: 0.3s ease-out;
+        transition-delay: 0.2s;
+        transform: translateY(-50%) rotate(180deg);
+      }
+      .main-picture-b .swiper-wrapper {
+        flex-direction: column;
+        transition-timing-function: cubic-bezier(0.18, 0.7, 0.55, 0.99);
+      }
+      .main-picture-b .swiper-wrapper .swiper-slide img {
+        transform: rotate(180deg);
+        border-radius: 4px;
+        margin: 0 0 -1px;
+      }
+      @media screen and (max-width: 1500px) {
+        .themes-b__grid {
+          min-height: 356px;
+        }
+      }
+      @media screen and (max-width: 1200px) {
+        .themes-b__grid {
+          min-height: 675px;
+        }
+        #themes .swiper-wrapper .swiper-slide {
+          height: initial !important;
+        }
+        .themes-b__grid {
+          flex-direction: column;
+          gap: 3rem;
+        }
+        .themes-b__item .container {
+          min-height: 100vh;
+        }
+        .themes-b__pic {
+          width: 100%;
+          padding-right: 0%;
+        }
+        .slider2.main-picture-b {
+          top: 65%;
+          height: 52%;
+        }
+        .themes-b__about {
+          padding-top: 1rem;
+        }
+        .themes-b__content {
+          padding-left: 7%;
+        }
+        #themes .button {
+          font-size: 14.66px;
+          line-height: 14.66px;
+        }
+        .themes-b__url {
+          height: 27.15px;
+          font-size: 15.13px;
+        }
+        #themes .themes-b__content .caption-b {
+          font-size: 20px;
+          line-height: 27px;
+        }
+        #themes .title_small {
+          line-height: 30px;
+          font-size: 20px;
+        }
+      }
+    </style>
+  </head>
+  <main  class="twoSlider">
+    <!-- Container for the sliders -->
+    <div class="slider-container">
+      <!-- Slider 1 (Full Background) -->
+      <div id="themes" class="swiper-container slider1">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="container-theme">
+              <div class="themes-b__grid">
+                <div class="themes-b__content">
+                  <a
+                    href="https://salla.sa/dev-wr0piewz9t1nb1bd/"
+                    target="_blank"
+                    class="themes-b__url"
+                  >
+                    <img
+                      src="https://new.themiify.com/wp-content/uploads/2024/08/link.png"
+                      alt="Icon"
+                      class="icon"
+                    />
+                    glamour.com</a
+                  >
+
+                  <div class="themes-b__about">
+                    <a
+                      href="https://salla.sa/dev-wr0piewz9t1nb1bd/"
+                      target="_blank"
+                    >
+                      <h2 class="title title_small title_white">
+                        GLAMOUR THEME
+                      </h2></a
+                    >
+                    <div class="caption-b">
+                      Try our themes to Increase your sales just in the first
+                      visit
+                    </div>
+
+                    <a
+                      href="https://salla.sa/dev-wr0piewz9t1nb1bd/"
+                      target="_blank"
+                      class="button"
+                    >
+                      Visit Theme
+                    </a>
+                  </div>
+                </div>
+                <a
+                  href="https://salla.sa/dev-wr0piewz9t1nb1bd/"
+                  class="themes-b__pic"
+                  target="_blank"
+                >
+                  <img
+                    loading="lazy"
+                    src="https://new.themiify.com/wp-content/uploads/2024/08/Group-1618873468.webp"
+                  />
+                </a>
+              </div>
+            </div>
+            <div class="themes-b__bg">
+              <img
+                loading="lazy"
+                src="https://new.themiify.com/wp-content/uploads/2024/11/Property-1Default-16.webp"
+              />
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="container-theme">
+              <div class="themes-b__grid">
+                <div class="themes-b__content">
+                  <a
+                    href="https://salla.sa/dev-afeenspk1m7adlxt/?expires=1713951021&identifier=1614726462&signature=75e5c68a27c065f6c18e16d9a5422a0bbf4dd4062c8d5628d7f4976f017d668d"
+                    target="_blank"
+                    class="themes-b__url"
+                  >
+                    <img
+                      src="https://new.themiify.com/wp-content/uploads/2024/08/link.png"
+                      alt="Icon"
+                      class="icon"
+                    />
+                    RACE.com</a
+                  >
+
+                  <div class="themes-b__about">
+                    <a
+                      href="https://salla.sa/dev-afeenspk1m7adlxt/?expires=1713951021&identifier=1614726462&signature=75e5c68a27c065f6c18e16d9a5422a0bbf4dd4062c8d5628d7f4976f017d668d"
+                      target="_blank"
+                      ><h2 class="title title_small title_white">
+                        RACE THEME
+                      </h2></a
+                    >
+                    <div class="caption-b">
+                      Try our themes to Increase your sales just in the first
+                      visit
+                    </div>
+
+                    <a
+                      href="https://salla.sa/dev-afeenspk1m7adlxt/?expires=1713951021&identifier=1614726462&signature=75e5c68a27c065f6c18e16d9a5422a0bbf4dd4062c8d5628d7f4976f017d668d"
+                      target="_blank"
+                      class="button"
+                    >
+                      Visit Theme
+                    </a>
+                  </div>
+                </div>
+                <a
+                  href="https://salla.sa/dev-afeenspk1m7adlxt/?expires=1713951021&identifier=1614726462&signature=75e5c68a27c065f6c18e16d9a5422a0bbf4dd4062c8d5628d7f4976f017d668d"
+                  class="themes-b__pic"
+                  target="_blank"
+                >
+                  <img
+                    loading="lazy"
+                    src="https://new.themiify.com/wp-content/uploads/2024/08/Group-1618873470.webp"
+                  />
+                </a>
+              </div>
+            </div>
+            <div class="themes-b__bg">
+              <img
+                loading="lazy"
+                src="https://new.themiify.com/wp-content/uploads/2024/11/Property-1Variant2-14.webp"
+              />
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="container-theme">
+              <div class="themes-b__grid">
+                <div class="themes-b__content">
+                  <a
+                    href="https://salla.sa/dev-whkyngjeig5zedi6/"
+                    target="_blank"
+                    class="themes-b__url"
+                  >
+                    <img
+                      src="https://new.themiify.com/wp-content/uploads/2024/08/link.png"
+                      alt="Icon"
+                      class="icon"
+                    />
+                    kHATWA.com</a
+                  >
+
+                  <div class="themes-b__about">
+                    <a
+                      href="https://new.themiify.com/wp-content/uploads/2024/08/link.png"
+                      target="_blank"
+                      ><h2 class="title title_small title_white">
+                        KHATWA THEME
+                      </h2></a
+                    >
+                    <div class="caption-b">
+                      Try our themes to Increase your sales just in the first
+                      visit.
+                    </div>
+
+                    <a
+                      href="https://salla.sa/dev-whkyngjeig5zedi6/"
+                      target="_blank"
+                      class="button"
+                    >
+                      Visit Theme
+                    </a>
+                  </div>
+                </div>
+                <a
+                  href="https://salla.sa/dev-whkyngjeig5zedi6/"
+                  class="themes-b__pic"
+                  target="_blank"
+                >
+                  <img
+                    loading="lazy"
+                    src="https://new.themiify.com/wp-content/uploads/2024/08/Group-1618873471.webp"
+                  />
+                </a>
+              </div>
+            </div>
+            <div class="themes-b__bg">
+              <img
+                loading="lazy"
+                src="https://new.themiify.com/wp-content/uploads/2024/11/Property-1Variant3-4.webp"
+              />
+            </div>
+          </div>
+         <div class="swiper-slide">
+            <div class="container-theme">
+              <div class="themes-b__grid">
+                <div class="themes-b__content">
+                  <a
+                    href="https://salla.sa/dev-wr0piewz9t1nb1bd/"
+                    target="_blank"
+                    class="themes-b__url"
+                  >
+                    <img
+                      src="https://new.themiify.com/wp-content/uploads/2024/08/link.png"
+                      alt="Icon"
+                      class="icon"
+                    />
+                    glamour.com</a
+                  >
+
+                  <div class="themes-b__about">
+                    <a
+                      href="https://salla.sa/dev-wr0piewz9t1nb1bd/"
+                      target="_blank"
+                    >
+                      <h2 class="title title_small title_white">
+                        GLAMOUR THEME
+                      </h2></a
+                    >
+                    <div class="caption-b">
+                      Try our themes to Increase your sales just in the first
+                      visit
+                    </div>
+
+                    <a
+                      href="https://salla.sa/dev-wr0piewz9t1nb1bd/"
+                      target="_blank"
+                      class="button"
+                    >
+                      Visit Theme
+                    </a>
+                  </div>
+                </div>
+                <a
+                  href="https://salla.sa/dev-wr0piewz9t1nb1bd/"
+                  class="themes-b__pic"
+                  target="_blank"
+                >
+                  <img
+                    loading="lazy"
+                    src="https://new.themiify.com/wp-content/uploads/2024/08/Group-1618873468.webp"
+                  />
+                </a>
+              </div>
+            </div>
+            <div class="themes-b__bg">
+              <img
+                loading="lazy"
+                src="https://new.themiify.com/wp-content/uploads/2024/11/Property-1Default-16.webp"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slider 2 (Top Content) -->
+      <div class="swiper-container slider2 main-picture-b .main-picture-b_show">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <a
+              href="https://salla.sa/dev-wr0piewz9t1nb1bd/"
+              class="themes-b__pic"
+              target="_blank"
+            >
+              <img
+                loading="lazy"
+                src="https://new.themiify.com/wp-content/uploads/2024/08/Group-1618873468.webp"
+              />
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://salla.sa/dev-afeenspk1m7adlxt/?expires=1713951021&amp;identifier=1614726462&amp;signature=75e5c68a27c065f6c18e16d9a5422a0bbf4dd4062c8d5628d7f4976f017d668d"
+              class="themes-b__pic"
+              target="_blank"
+            >
+              <img
+                loading="lazy"
+                src="https://new.themiify.com/wp-content/uploads/2024/08/Group-1618873470.webp"
+              />
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://salla.sa/dev-whkyngjeig5zedi6/"
+              class="themes-b__pic"
+              target="_blank"
+            >
+              <img
+                loading="lazy"
+                src="https://new.themiify.com/wp-content/uploads/2024/08/Group-1618873471.webp"
+              />
+            </a>
+          </div>
+         <div class="swiper-slide">
+            <a
+              href="https://salla.sa/dev-wr0piewz9t1nb1bd/"
+              class="themes-b__pic"
+              target="_blank"
+            >
+              <img
+                loading="lazy"
+                src="https://new.themiify.com/wp-content/uploads/2024/08/Group-1618873468.webp"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!-- JavaScript to link sliders -->
+    <script>
+    const swiper1 = new Swiper(".slider1", {
+      direction: "vertical",
+      speed: 1000,
+      slidesPerView: 1,
+      mousewheel: true,
+    });
+
+swiper1.on("reachEnd", function () {
+const mediaQuery = window.matchMedia('(max-width: 767px)')
+if (mediaQuery.matches) {
+  window.scrollBy({
+    top:600,
+    behavior: 'smooth'
+  });}else {
+     window.scrollBy({
+    top:1000,
+    behavior: 'smooth'
+  });
+
+  }
+});
+
+
+      const swiper2 = new Swiper(".slider2", {
+        // Swiper options for the second slider
+        direction: "vertical",
+        speed: 1000,
+        slidesPerView: 1,
+        mousewheel: true,
+      });
+
+      function updateImages() {
+        const width = window.innerWidth;
+        const mobileBreakpoint = 768;
+
+        const images = {
+          section1:
+            width <= mobileBreakpoint
+              ? "https://new.themiify.com/wp-content/uploads/2024/11/Property-1Default-17.webp"
+              : "https://new.themiify.com/wp-content/uploads/2024/11/Property-1Default-16.webp",
+          section2:
+            width <= mobileBreakpoint
+              ? "https://new.themiify.com/wp-content/uploads/2024/11/Property-1Variant2-16.webp"
+              : "https://new.themiify.com/wp-content/uploads/2024/11/Property-1Variant2-14.webp",
+          section3:
+            width <= mobileBreakpoint
+              ? "https://new.themiify.com/wp-content/uploads/2024/11/Property-1Variant3-6.webp"
+              : "https://new.themiify.com/wp-content/uploads/2024/11/Property-1Variant3-4.webp",
+          sectionImg1:
+            width <= mobileBreakpoint
+              ? "https://new.themiify.com/wp-content/uploads/2024/08/Frame-1000002699-e1723367727820.png"
+              : "https://new.themiify.com/wp-content/uploads/2024/08/Group-1618873472.webp",
+          sectionImg2:
+            width <= mobileBreakpoint
+              ? "https://new.themiify.com/wp-content/uploads/2024/08/Frame-1000002698-e1723367659132.png"
+              : "https://new.themiify.com/wp-content/uploads/2024/08/Group-1618873473-1.webp",
+          sectionImg3:
+            width <= mobileBreakpoint
+              ? "https://new.themiify.com/wp-content/uploads/2024/08/Frame-1000002698-1-e1723367565861.png"
+              : "https://new.themiify.com/wp-content/uploads/2024/08/Group-1618873474.webp",
+        };
+
+        const selectors = {
+          section1: ".slider1 .swiper-slide:nth-of-type(1) .themes-b__bg img",
+          section2: ".slider1 .swiper-slide:nth-of-type(2) .themes-b__bg img",
+          section3: ".slider1 .swiper-slide:nth-of-type(3) .themes-b__bg img",
+          sectionImg1:
+            ".slider2 .swiper-slide:nth-of-type(1) .themes-b__pic img",
+          sectionImg2:
+            ".slider2 .swiper-slide:nth-of-type(2) .themes-b__pic img",
+          sectionImg3:
+            ".slider2 .swiper-slide:nth-of-type(3) .themes-b__pic img",
+        };
+
+        for (const [key, selector] of Object.entries(selectors)) {
+          const imgElement = document.querySelector(selector);
+          if (imgElement) {
+            imgElement.src = images[key];
+          }
+        }
+      }
+
+      function debounce(func, wait) {
+        let timeout;
+        return function (...args) {
+          clearTimeout(timeout);
+          timeout = setTimeout(() => func.apply(this, args), wait);
+        };
+      }
+
+      window.addEventListener("load", updateImages);
+      window.addEventListener("resize", debounce(updateImages, 250));
+      // Link the two sliders
+      swiper1.controller.control = swiper2;
+      swiper2.controller.control = swiper1;
+    </script>
+  </main>
+</html>
